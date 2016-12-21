@@ -5,7 +5,7 @@
 <br/>
 <br/>
 
-<table>
+<table class="sortable">
     <thead>
         <tr>
             <th>
@@ -19,6 +19,12 @@
             </th>
             <th>
                 <?=$this->translate('__user_email')?>
+            </th>
+            <th>
+                <?=$this->translate('__user_birthdate')?>
+            </th>
+            <th>
+                <?=$this->translate('__user_address')?>
             </th>
             <th></th>
         </tr>
@@ -43,6 +49,12 @@
             <a href='mailto:<?=$user['email']?>'>
                 <?=$user['email']?>
             </a>
+        </td>
+        <td>
+            <?=$user['profile']['birthdate']->format('Y-m-d')?>
+        </td>
+        <td>
+            <?=$user['profile']['address']?>
         </td>
         <td>
             <a href="<?=$this->url('users/edit', array('user_id'   =>  $user['id']))?>" class="btn btn-success">
